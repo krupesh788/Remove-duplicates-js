@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Merge Arrays and Remove Duplicates</h1>
+
+        Array 1:
+        <br>
+        <br>
+
+        <input type="text" id="a1">
+
+        <br>
+        <br>
+        
+        Array 2:
+        <br>
+        <br>
+
+        <input type="text" id="a2">
+
+        <br>
+        <br>
+
+        <button onclick="removeDuplicate()" class="btn">Merge and Remove Duplicates</button>
+
+        <br>
+        <br>
+
+        <div id="p1"></div>
+
+    </div>
+
+
+
+    <script>
+
+        function removeDuplicate(){
+
+
+            let a1 = document.getElementById("a1").value;
+            let a2 = document.getElementById("a2").value;
+
+
+            let arr1 = a1.split(",");
+            let arr2 = a2.split(",");
+
+            let arr3 = arr1.concat(arr2);
+
+            let unique = [];
+
+
+            for (let i of arr3) {
+
+                if(unique.indexOf(i) === -1){
+
+                    unique.push(i);
+                }
+                
+            }
+
+            document.getElementById("p1").innerHTML = `Merged Array without Duplicates: ${unique}`;
+        }
+
+
+
+
+    </script>
+</body>
+</html>
